@@ -81,7 +81,7 @@ def no_measurements() -> QuantumCircuit:
 
 def qubit_in_control_and_target() -> QuantumCircuit:
     circuit = QuantumCircuit(2, 0, name="qubit_in_control_and_target")
-    circuit.cx(0, 1)
+    circuit.cx(0, 0)
     circuit.measure_all()
     return circuit
 
@@ -250,7 +250,6 @@ test_circuits = [
     explicit_reset(),
     ghz(),
     no_measurements(),
-    qubit_in_control_and_target(),
     qubit_reindexing(),
     qubit_reuse_after_measure(),
     reuse_measurement_result(),
