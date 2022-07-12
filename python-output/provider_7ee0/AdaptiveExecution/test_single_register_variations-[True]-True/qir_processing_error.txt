@@ -1,0 +1,1 @@
+QAT creation failed for test_single_register_variations-[True]-True using ['provider_7ee0', 'AdaptiveExecution']

@@ -1,0 +1,1 @@
+QAT creation failed for test_single_register_index_variations-[True]-True using ['provider_4bf9', 'AdaptiveExecution']

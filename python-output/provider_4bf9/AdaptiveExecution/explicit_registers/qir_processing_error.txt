@@ -1,0 +1,1 @@
+QAT creation failed for explicit_registers using ['provider_4bf9', 'AdaptiveExecution']

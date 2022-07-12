@@ -3,11 +3,11 @@ source_filename = "barriers_only"
 
 %Result = type opaque
 
-declare void @__quantum__rt__array_end_record_output()
-
 declare void @__quantum__rt__result_record_output(%Result*)
 
 declare void @__quantum__rt__array_start_record_output()
+
+declare void @__quantum__rt__array_end_record_output()
 
 define void @main() #0 {
 entry:
