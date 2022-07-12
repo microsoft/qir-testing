@@ -1,3 +1,6 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
+
 from qiskit import ClassicalRegister, QuantumCircuit
 from qiskit.circuit import Clbit
 
