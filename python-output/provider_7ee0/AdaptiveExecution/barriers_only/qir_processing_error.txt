@@ -1,1 +1,6 @@
-An exception happened while processing QIR for barriers_only using ['provider_7ee0', 'AdaptiveExecution']: [Errno 2] No such file or directory: 'python-output/provider_7ee0/AdaptiveExecution/barriers_only/targeted_qir.bc'
+QIR processing failed for barriers_only using ['provider_7ee0', 'AdaptiveExecution']
+Details:
+{
+  "code": "QatExecutionFailed",
+  "message": "QIR transformation to profile failed.\nDetails:\n\nNo qubits present in function (required by profile)."
+}

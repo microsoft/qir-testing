@@ -1,1 +1,6 @@
-An exception happened while processing QIR for gate_measure_active_no_active using ['provider_7ee0', 'BasicExecution']: [Errno 2] No such file or directory: 'python-output/provider_7ee0/BasicExecution/gate_measure_active_no_active/targeted_qir.bc'
+QIR processing failed for gate_measure_active_no_active using ['provider_7ee0', 'BasicExecution']
+Details:
+{
+  "code": "QatExecutionFailed",
+  "message": "QIR transformation to profile failed.\nDetails:\n\nNo qubits present in function (required by profile).\nNo results present in function (required by profile)."
+}
