@@ -1,1 +1,0 @@
-QAT creation failed for gate_id using ['provider_4bf9', 'AdaptiveExecution']

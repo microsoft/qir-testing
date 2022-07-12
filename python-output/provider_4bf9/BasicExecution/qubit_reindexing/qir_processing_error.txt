@@ -1,1 +1,0 @@
-QAT creation failed for qubit_reindexing using ['provider_4bf9', 'BasicExecution']

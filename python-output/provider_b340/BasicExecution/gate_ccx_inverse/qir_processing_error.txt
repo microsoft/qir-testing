@@ -1,1 +1,0 @@
-QAT creation failed for gate_ccx_inverse using ['provider_b340', 'BasicExecution']

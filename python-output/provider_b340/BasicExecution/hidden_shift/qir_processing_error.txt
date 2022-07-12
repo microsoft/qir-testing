@@ -1,1 +1,0 @@
-QAT creation failed for hidden_shift using ['provider_b340', 'BasicExecution']

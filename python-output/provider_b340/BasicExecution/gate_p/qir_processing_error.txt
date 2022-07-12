@@ -1,1 +1,0 @@
-QAT creation failed for gate_p using ['provider_b340', 'BasicExecution']
