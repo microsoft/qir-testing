@@ -1,6 +1,0 @@
-QIR processing failed for barriers_only using ['provider_4bf9', 'AdaptiveExecution']
-Details:
-{
-  "code": "QatExecutionFailed",
-  "message": "QIR transformation to profile failed.\nDetails:\n\nNo qubits present in function (required by profile)."
-}

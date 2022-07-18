@@ -1,0 +1,6 @@
+QIR processing failed for no_measurements using ['target_4bf9', 'AdaptiveExecution']
+Details:
+{
+  "code": "QatExecutionFailed",
+  "message": "QIR transformation to profile failed.\nDetails:\n\nNo results present in function (required by profile)."
+}

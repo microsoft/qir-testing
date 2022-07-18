@@ -1,0 +1,6 @@
+QIR processing failed for barriers_only using ['target_7ee0', 'BasicExecution']
+Details:
+{
+  "code": "QatExecutionFailed",
+  "message": "QIR transformation to profile failed.\nDetails:\n\nNo qubits present in function (required by profile)."
+}
