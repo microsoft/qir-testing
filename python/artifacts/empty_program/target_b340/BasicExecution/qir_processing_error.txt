@@ -1,0 +1,6 @@
+QIR processing failed for empty_program using ['target_b340', 'BasicExecution']
+Details:
+{
+  "code": "QatExecutionFailed",
+  "message": "QIR transformation to profile failed.\nDetails:\n\nNo qubits present in function (required by profile).\nNo results present in function (required by profile)."
+}

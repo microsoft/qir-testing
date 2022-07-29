@@ -1,14 +1,37 @@
 # Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repo contains sample circuits and programs along with QIR for testing of QIR based tooling.
 
-As the maintainer of this project, please make a few updates:
+## Test Case Structure
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+### Python
+
+Qiskit based test circuits should have unique names that are valid file/directory names.
+
+- Circuits
+  - `adaptive_cirquits.py` contains test cases leveraging conditions based on measurement results. Test cases should return `Generator[QuantumCircuit, Any, Any]` for circuits.
+  - `circuits.py` contains test circuits.
+  - `gates.py` contains gate definitions which are transpiled to the target gate set along with their controlled, power, and inverse. Test cases should return `List[QuantumCircuit]` and call `generate_circuits` with the appropriate parameters for creating their variations.
+
+## Output Folder Structure
+
+The `python-output` directory contains a folder per provider
+(e.g. `provider_4bf9`, `provider_7ee0`). Within each provider's directory
+is a folder for each execution profile supported. Finally, within each
+execution profile, each test case has their own folder for that
+provider/profile/test combination.
+
+Each test case includes:
+- Input of either
+  - QIR source `src_ir.ll` and bitcode `src_qir.bc` files representing the test case
+  - `generation_error.txt` when the test case cannot be generate valid QIR for the chosen provider/profile
+- An OpenQASM `circuit.qasm` representing the test cases circuit. This file may not exist as OpenQASM cannot represent all test cases.
+- QIR output of either
+  -  QIR source `targeted_ir.ll` and bitcode `targeted_qir` files with the provider/profile targeted QIR.
+  - `qir_processing_error.txt` containing the validation or transformation errors associated with the targeting of the QIR.
+- Simulation output of either
+  - `hist.txt` containing a sample histogram from simulating the circuit.
+  - `simulation_error.txt` containing the simulation errors encountered when running the circuit. 
 
 ## Contributing
 

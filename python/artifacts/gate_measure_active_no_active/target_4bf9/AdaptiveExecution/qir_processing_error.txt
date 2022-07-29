@@ -1,0 +1,6 @@
+QIR processing failed for gate_measure_active_no_active using ['target_4bf9', 'AdaptiveExecution']
+Details:
+{
+  "code": "QatExecutionFailed",
+  "message": "QIR transformation to profile failed.\nDetails:\n\nNo qubits present in function (required by profile).\nNo results present in function (required by profile)."
+}
