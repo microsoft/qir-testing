@@ -8,20 +8,20 @@ This repo contains sample circuits and programs along with QIR for testing of QI
 
 Qiskit based test circuits should have unique names that are valid file/directory names.
 
-- Circuits
+- `python/src`
   - `adaptive_cirquits.py` contains test cases leveraging conditions based on measurement results. Test cases should return `Generator[QuantumCircuit, Any, Any]` for circuits.
   - `circuits.py` contains test circuits.
   - `gates.py` contains gate definitions which are transpiled to the target gate set along with their controlled, power, and inverse. Test cases should return `List[QuantumCircuit]` and call `generate_circuits` with the appropriate parameters for creating their variations.
 
 ## Output Folder Structure
 
-The `python-output` directory contains a folder per provider
-(e.g. `provider_4bf9`, `provider_7ee0`). Within each provider's directory
-is a folder for each execution profile supported. Finally, within each
-execution profile, each test case has their own folder for that
-provider/profile/test combination.
+The `python/artifacts` directory contains a folder per test case
+(e.g. `duplicate_conditions`, `hidden_shift`). Within each test case's
+directory is a folder for each execution target profile (e.g. `target_4bf9`,
+`target_7ee0`). Finally, within each execution target, there is a folder for
+each execution profile supported for that target (e.g. `AdaptiveExecution`).
 
-Each test case includes:
+Each test case/target/profile combination includes:
 - Input of either
   - QIR source `src_ir.ll` and bitcode `src_qir.bc` files representing the test case
   - `generation_error.txt` when the test case cannot be generate valid QIR for the chosen provider/profile
