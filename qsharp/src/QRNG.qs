@@ -9,6 +9,7 @@ namespace Sample {
             H(q);
         }
 
+        // N.B. This currently fails on QIR generation because of the measuerement operation being used.
         return MeasureEachZ(qubits);
     }
 }

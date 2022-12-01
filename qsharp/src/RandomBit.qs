@@ -6,6 +6,6 @@ namespace Sample {
     operation RandomBit() : (Result) {
         use qubit = Qubit();
         H(qubit);
-        return M(qubit);
+        return MResetZ(qubit);
     }
 }
