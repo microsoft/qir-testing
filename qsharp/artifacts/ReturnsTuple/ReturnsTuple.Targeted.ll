@@ -21,11 +21,10 @@ entry:
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*), %Result* null)
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 4 to %Qubit*), %Result* nonnull inttoptr (i64 1 to %Result*))
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 5 to %Qubit*), %Result* nonnull inttoptr (i64 2 to %Result*))
-  call void @__quantum__rt__tuple_start_record_output()
+  call void @__quantum__rt__tuple_record_output(i64 3, i8* null)
   call void @__quantum__rt__result_record_output(%Result* null, i8* null)
   call void @__quantum__rt__result_record_output(%Result* nonnull inttoptr (i64 1 to %Result*), i8* null)
   call void @__quantum__rt__result_record_output(%Result* nonnull inttoptr (i64 2 to %Result*), i8* null)
-  call void @__quantum__rt__tuple_end_record_output()
   ret void
 }
 
@@ -45,11 +44,9 @@ declare void @__quantum__qis__reset__body(%Qubit*)
 
 declare void @__quantum__rt__qubit_release(%Qubit*)
 
-declare void @__quantum__rt__tuple_start_record_output()
+declare void @__quantum__rt__tuple_record_output(i64, i8*)
 
 declare void @__quantum__rt__result_record_output(%Result*, i8*)
-
-declare void @__quantum__rt__tuple_end_record_output()
 
 declare void @__quantum__qis__mz__body(%Qubit*, %Result*)
 
