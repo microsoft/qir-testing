@@ -1,4 +1,4 @@
-; ModuleID = 'NestedBranching.Targeted.bc'
+; ModuleID = 'NestedBranching/target_7ee0/NestedBranching.Targeted.bc'
 source_filename = "qat-link"
 
 %Qubit = type opaque
@@ -21,46 +21,46 @@ entry:
   call void @__quantum__qis__mz__body(%Qubit* null, %Result* null)
   call void @__quantum__qis__reset__body(%Qubit* null)
   %0 = call i1 @__quantum__qis__read_result__body(%Result* null)
-  br i1 %0, label %then0__3, label %continue__4
+  br i1 %0, label %then0__1, label %continue__4
 
-then0__3:                                         ; preds = %entry
+then0__1:                                         ; preds = %entry
   call void @__quantum__qis__x__body(%Qubit* null)
   br label %continue__4
 
-continue__4:                                      ; preds = %then0__3, %entry
+continue__4:                                      ; preds = %then0__1, %entry
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 1 to %Qubit*), %Result* nonnull inttoptr (i64 1 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* nonnull inttoptr (i64 1 to %Qubit*))
   %1 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 1 to %Result*))
-  br i1 %1, label %then0__4, label %continue__5
+  br i1 %1, label %then0__2, label %continue__5
 
-then0__4:                                         ; preds = %continue__4
+then0__2:                                         ; preds = %continue__4
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 1 to %Qubit*))
   br label %continue__5
 
-continue__5:                                      ; preds = %then0__4, %continue__4
+continue__5:                                      ; preds = %then0__2, %continue__4
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 2 to %Qubit*), %Result* nonnull inttoptr (i64 2 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* nonnull inttoptr (i64 2 to %Qubit*))
   %2 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 2 to %Result*))
-  br i1 %2, label %then0__5, label %continue__6
+  br i1 %2, label %then0__3, label %continue__6
 
-then0__5:                                         ; preds = %continue__5
+then0__3:                                         ; preds = %continue__5
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 2 to %Qubit*))
   br label %continue__6
 
-continue__6:                                      ; preds = %then0__5, %continue__5
+continue__6:                                      ; preds = %then0__3, %continue__5
   %3 = call i1 @__quantum__qis__read_result__body(%Result* null)
-  br i1 %3, label %else__1, label %then0__6
+  br i1 %3, label %else__1, label %then0__4
 
-then0__6:                                         ; preds = %continue__6
+then0__4:                                         ; preds = %continue__6
   %4 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 1 to %Result*))
   br i1 %4, label %condContinue__1, label %condTrue__1
 
-condTrue__1:                                      ; preds = %then0__6
+condTrue__1:                                      ; preds = %then0__4
   %5 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 2 to %Result*))
   br label %condContinue__1
 
-condContinue__1:                                  ; preds = %condTrue__1, %then0__6
-  %.in1 = phi i1 [ %5, %condTrue__1 ], [ %4, %then0__6 ]
+condContinue__1:                                  ; preds = %condTrue__1, %then0__4
+  %.in1 = phi i1 [ %5, %condTrue__1 ], [ %4, %then0__4 ]
   br i1 %.in1, label %test1__1, label %continue__7
 
 test1__1:                                         ; preds = %condContinue__1
@@ -138,64 +138,64 @@ continue__7:                                      ; preds = %condContinue__6, %c
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 4 to %Qubit*), %Result* nonnull inttoptr (i64 3 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* nonnull inttoptr (i64 4 to %Qubit*))
   %24 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 3 to %Result*))
-  br i1 %24, label %then0__12, label %continue__14
+  br i1 %24, label %then0__7, label %continue__14
 
-then0__12:                                        ; preds = %continue__7
+then0__7:                                         ; preds = %continue__7
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 4 to %Qubit*))
   br label %continue__14
 
-continue__14:                                     ; preds = %then0__12, %continue__7
+continue__14:                                     ; preds = %then0__7, %continue__7
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 5 to %Qubit*), %Result* nonnull inttoptr (i64 4 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* nonnull inttoptr (i64 5 to %Qubit*))
   %25 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 4 to %Result*))
-  br i1 %25, label %then0__13, label %continue__15
+  br i1 %25, label %then0__8, label %continue__15
 
-then0__13:                                        ; preds = %continue__14
+then0__8:                                         ; preds = %continue__14
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 5 to %Qubit*))
   br label %continue__15
 
-continue__15:                                     ; preds = %then0__13, %continue__14
+continue__15:                                     ; preds = %then0__8, %continue__14
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 6 to %Qubit*), %Result* nonnull inttoptr (i64 5 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* nonnull inttoptr (i64 6 to %Qubit*))
   %26 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
-  br i1 %26, label %then0__14, label %continue__16
+  br i1 %26, label %then0__9, label %continue__16
 
-then0__14:                                        ; preds = %continue__15
+then0__9:                                         ; preds = %continue__15
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 6 to %Qubit*))
   br label %continue__16
 
-continue__16:                                     ; preds = %then0__14, %continue__15
+continue__16:                                     ; preds = %then0__9, %continue__15
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 7 to %Qubit*), %Result* nonnull inttoptr (i64 6 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* nonnull inttoptr (i64 7 to %Qubit*))
   %27 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 6 to %Result*))
-  br i1 %27, label %then0__15, label %continue__17
+  br i1 %27, label %then0__10, label %continue__17
 
-then0__15:                                        ; preds = %continue__16
+then0__10:                                        ; preds = %continue__16
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 7 to %Qubit*))
   br label %continue__17
 
-continue__17:                                     ; preds = %then0__15, %continue__16
+continue__17:                                     ; preds = %then0__10, %continue__16
   %28 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 3 to %Result*))
-  br i1 %28, label %test1__3, label %then0__16
+  br i1 %28, label %test1__3, label %then0__11
 
-then0__16:                                        ; preds = %continue__17
+then0__11:                                        ; preds = %continue__17
   %29 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 4 to %Result*))
-  br i1 %29, label %else__4, label %then0__17
+  br i1 %29, label %else__4, label %then0__12
 
-then0__17:                                        ; preds = %then0__16
+then0__12:                                        ; preds = %then0__11
   %30 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
   br i1 %30, label %else__5, label %continue__18
 
-else__5:                                          ; preds = %then0__17
+else__5:                                          ; preds = %then0__12
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
 
-else__4:                                          ; preds = %then0__16
+else__4:                                          ; preds = %then0__11
   %31 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
-  br i1 %31, label %else__6, label %then0__19
+  br i1 %31, label %else__6, label %then0__14
 
-then0__19:                                        ; preds = %else__4
+then0__14:                                        ; preds = %else__4
   call void @__quantum__qis__y__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   call void @__quantum__qis__y__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
@@ -220,22 +220,22 @@ condContinue__7:                                  ; preds = %condTrue__7, %test1
 
 then1__3:                                         ; preds = %condContinue__7
   %36 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 4 to %Result*))
-  br i1 %36, label %else__7, label %then0__20
+  br i1 %36, label %else__7, label %then0__15
 
-then0__20:                                        ; preds = %then1__3
+then0__15:                                        ; preds = %then1__3
   %37 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
   br i1 %37, label %else__8, label %continue__18
 
-else__8:                                          ; preds = %then0__20
+else__8:                                          ; preds = %then0__15
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
 
 else__7:                                          ; preds = %then1__3
   %38 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
-  br i1 %38, label %else__9, label %then0__22
+  br i1 %38, label %else__9, label %then0__17
 
-then0__22:                                        ; preds = %else__7
+then0__17:                                        ; preds = %else__7
   call void @__quantum__qis__y__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   call void @__quantum__qis__y__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
@@ -260,22 +260,22 @@ condContinue__8:                                  ; preds = %condTrue__8, %test2
 
 then2__3:                                         ; preds = %condContinue__8
   %43 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 4 to %Result*))
-  br i1 %43, label %else__11, label %then0__23
+  br i1 %43, label %else__11, label %then0__18
 
-then0__23:                                        ; preds = %then2__3
+then0__18:                                        ; preds = %then2__3
   %44 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
   br i1 %44, label %else__12, label %continue__18
 
-else__12:                                         ; preds = %then0__23
+else__12:                                         ; preds = %then0__18
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
 
 else__11:                                         ; preds = %then2__3
   %45 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
-  br i1 %45, label %else__13, label %then0__25
+  br i1 %45, label %else__13, label %then0__20
 
-then0__25:                                        ; preds = %else__11
+then0__20:                                        ; preds = %else__11
   call void @__quantum__qis__y__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   call void @__quantum__qis__y__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
@@ -287,22 +287,22 @@ else__13:                                         ; preds = %else__11
 
 else__10:                                         ; preds = %condContinue__8
   %46 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 4 to %Result*))
-  br i1 %46, label %else__14, label %then0__26
+  br i1 %46, label %else__14, label %then0__21
 
-then0__26:                                        ; preds = %else__10
+then0__21:                                        ; preds = %else__10
   %47 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
   br i1 %47, label %else__15, label %continue__18
 
-else__15:                                         ; preds = %then0__26
+else__15:                                         ; preds = %then0__21
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   call void @__quantum__qis__x__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
 
 else__14:                                         ; preds = %else__10
   %48 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 5 to %Result*))
-  br i1 %48, label %else__16, label %then0__28
+  br i1 %48, label %else__16, label %then0__23
 
-then0__28:                                        ; preds = %else__14
+then0__23:                                        ; preds = %else__14
   call void @__quantum__qis__y__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   call void @__quantum__qis__y__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
@@ -312,7 +312,7 @@ else__16:                                         ; preds = %else__14
   call void @__quantum__qis__z__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   br label %continue__18
 
-continue__18:                                     ; preds = %else__16, %then0__28, %else__15, %then0__26, %else__13, %then0__25, %else__12, %then0__23, %else__9, %then0__22, %else__8, %then0__20, %else__6, %then0__19, %else__5, %then0__17
+continue__18:                                     ; preds = %else__16, %then0__23, %else__15, %then0__21, %else__13, %then0__20, %else__12, %then0__18, %else__9, %then0__17, %else__8, %then0__15, %else__6, %then0__14, %else__5, %then0__12
   call void @__quantum__qis__mz__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*), %Result* nonnull inttoptr (i64 7 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* nonnull inttoptr (i64 3 to %Qubit*))
   %__rtrnVal3__ = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 7 to %Result*))
@@ -338,27 +338,13 @@ continue__18:                                     ; preds = %else__16, %then0__2
   ret void
 }
 
-declare %Qubit* @__quantum__rt__qubit_allocate()
-
 declare void @__quantum__qis__x__body(%Qubit*)
 
-declare %Result* @__quantum__rt__result_get_zero()
-
-declare void @__quantum__rt__result_update_reference_count(%Result*, i32)
-
-declare %Result* @__quantum__qis__m__body(%Qubit*)
-
 declare void @__quantum__qis__reset__body(%Qubit*)
-
-declare %Result* @__quantum__rt__result_get_one()
-
-declare i1 @__quantum__rt__result_equal(%Result*, %Result*)
 
 declare void @__quantum__qis__y__body(%Qubit*)
 
 declare void @__quantum__qis__z__body(%Qubit*)
-
-declare void @__quantum__rt__qubit_release(%Qubit*)
 
 declare void @__quantum__rt__tuple_start_record_output()
 
@@ -378,4 +364,4 @@ declare void @__quantum__qis__mz__body(%Qubit*, %Result*)
 
 declare i1 @__quantum__qis__read_result__body(%Result*)
 
-attributes #0 = { "EntryPoint" "maxQubitIndex"="7" "maxResultIndex"="7" "requiredQubits"="8" "requiredResults"="8" }
+attributes #0 = { "EntryPoint" "entry_point" "entrypoint_index"="0" "maxQubitIndex"="7" "maxResultIndex"="7" "requiredQubits"="8" "requiredResults"="8" }
