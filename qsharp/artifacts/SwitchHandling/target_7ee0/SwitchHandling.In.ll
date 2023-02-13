@@ -1,4 +1,4 @@
-; ModuleID = 'SwitchHandling.In.bc'
+; ModuleID = 'SwitchHandling/target_7ee0/SwitchHandling.In.bc'
 
 %Result = type opaque
 %Qubit = type opaque
@@ -33,6 +33,8 @@ entry:
   call void @__quantum__rt__result_update_reference_count(%Result* %7, i32 1)
   call void @__quantum__rt__result_update_reference_count(%Result* %7, i32 1)
   store { [2 x %Result*], i64 } %15, { [2 x %Result*], i64 }* %results, align 8
+  call void @__quantum__rt__result_update_reference_count(%Result* %7, i32 1)
+  call void @__quantum__rt__result_update_reference_count(%Result* %7, i32 1)
   %result = call %Result* @__quantum__qis__m__body(%Qubit* %q)
   call void @__quantum__qis__reset__body(%Qubit* %q)
   %16 = call %Result* @__quantum__rt__result_get_one()
@@ -69,6 +71,8 @@ continue__2:                                      ; preds = %then0__2, %continue
   %28 = insertvalue { [2 x %Result*], i64 } zeroinitializer, [2 x %Result*] %27, 0
   %29 = insertvalue { [2 x %Result*], i64 } %28, i64 2, 1
   store { [2 x %Result*], i64 } %29, { [2 x %Result*], i64 }* %results, align 8
+  call void @__quantum__rt__result_update_reference_count(%Result* %result, i32 -1)
+  call void @__quantum__rt__result_update_reference_count(%Result* %result__2, i32 -1)
   store i64 0, i64* %rand, align 4
   %30 = call %Result* @__quantum__rt__result_get_one()
   %31 = call i1 @__quantum__rt__result_equal(%Result* %result, %Result* %30)
@@ -109,13 +113,10 @@ test1__1:                                         ; preds = %continue__4
   br i1 %40, label %then1__1, label %test2__1
 
 then1__1:                                         ; preds = %test1__1
-  br i1 true, label %then1__2, label %continue__7
-
-then1__2:                                         ; preds = %then1__1
   call void @__quantum__qis__ry__body(double 0x400921FB54442D18, %Qubit* %q__2)
   br label %continue__7
 
-continue__7:                                      ; preds = %then1__2, %then1__1
+continue__7:                                      ; preds = %then1__1
   br label %continue__5
 
 test2__1:                                         ; preds = %test1__1
@@ -124,23 +125,17 @@ test2__1:                                         ; preds = %test1__1
   br i1 %42, label %then2__1, label %else__1
 
 then2__1:                                         ; preds = %test2__1
-  br i1 true, label %then2__2, label %continue__8
-
-then2__2:                                         ; preds = %then2__1
   call void @__quantum__qis__rz__body(double 0x400921FB54442D18, %Qubit* %q__2)
   br label %continue__8
 
-continue__8:                                      ; preds = %then2__2, %then2__1
+continue__8:                                      ; preds = %then2__1
   br label %continue__5
 
 else__1:                                          ; preds = %test2__1
-  br i1 true, label %then0__6, label %continue__9
-
-then0__6:                                         ; preds = %else__1
   call void @__quantum__qis__rx__body(double 0x400921FB54442D18, %Qubit* %q__2)
   br label %continue__9
 
-continue__9:                                      ; preds = %then0__6, %else__1
+continue__9:                                      ; preds = %else__1
   br label %continue__5
 
 continue__5:                                      ; preds = %continue__9, %continue__8, %continue__7, %continue__6
