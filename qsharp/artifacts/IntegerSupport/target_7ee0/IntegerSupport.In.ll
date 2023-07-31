@@ -142,20 +142,21 @@ then0__10:                                        ; preds = %continue__10
   br label %continue__9
 
 continue__9:                                      ; preds = %then0__10, %continue__10
+  call void @__quantum__qis__reset__body(%Qubit* %q)
   %36 = load i64, i64* %sum, align 4
   %positiveMultiplication = mul i64 %36, 3
   %37 = load i64, i64* %substraction, align 4
   %negativeMultiplication = mul i64 %37, 3
   %doubleNegativeMultiplication = mul i64 %37, -3
   %exactDivision = sdiv i64 %doubleNegativeMultiplication, 6
-  %inexactDivision = sdiv i64 %36, 2
-  %__rtrnVal0__ = icmp eq i64 %36, 5
-  %__rtrnVal1__ = icmp eq i64 %37, -10
-  %__rtrnVal2__ = icmp eq i64 %positiveMultiplication, 15
-  %__rtrnVal3__ = icmp eq i64 %negativeMultiplication, -30
-  %__rtrnVal4__ = icmp eq i64 %doubleNegativeMultiplication, 30
-  %__rtrnVal5__ = icmp eq i64 %exactDivision, 5
-  %__rtrnVal6__ = icmp eq i64 %inexactDivision, 2
+  %inexactDivision = sdiv i64 %doubleNegativeMultiplication, 5
+  %__rtrnVal0__ = icmp eq i64 %36, 3
+  %__rtrnVal1__ = icmp eq i64 %37, -6
+  %__rtrnVal2__ = icmp eq i64 %positiveMultiplication, 9
+  %__rtrnVal3__ = icmp eq i64 %negativeMultiplication, -18
+  %__rtrnVal4__ = icmp eq i64 %doubleNegativeMultiplication, 18
+  %__rtrnVal5__ = icmp eq i64 %exactDivision, 3
+  %__rtrnVal6__ = icmp eq i64 %inexactDivision, 3
   %38 = insertvalue { i1, i1, i1, i1, i1, i1, i1 } zeroinitializer, i1 %__rtrnVal0__, 0
   %39 = insertvalue { i1, i1, i1, i1, i1, i1, i1 } %38, i1 %__rtrnVal1__, 1
   %40 = insertvalue { i1, i1, i1, i1, i1, i1, i1 } %39, i1 %__rtrnVal2__, 2

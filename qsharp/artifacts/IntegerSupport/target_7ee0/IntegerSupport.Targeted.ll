@@ -26,7 +26,7 @@ then0__1:                                         ; preds = %entry
 
 continue__2:                                      ; preds = %then0__1, %entry
   %1 = call i1 @__quantum__qis__read_result__body(%Result* null)
-  %spec.select1 = select i1 %1, i64 -2, i64 0
+  %spec.select2 = select i1 %1, i64 -2, i64 0
   call void @__quantum__qis__rx__body(double 0x400921FB54442D18, %Qubit* null)
   call void @__quantum__qis__mz__body(%Qubit* null, %Result* nonnull inttoptr (i64 1 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* null)
@@ -39,8 +39,8 @@ then0__3:                                         ; preds = %continue__2
 
 continue__4:                                      ; preds = %then0__3, %continue__2
   %3 = call i1 @__quantum__qis__read_result__body(%Result* nonnull inttoptr (i64 1 to %Result*))
-  %4 = add nsw i64 %spec.select1, -2
-  %substraction.1 = select i1 %3, i64 %4, i64 %spec.select1
+  %4 = add nsw i64 %spec.select2, -2
+  %substraction.1 = select i1 %3, i64 %4, i64 %spec.select2
   call void @__quantum__qis__rx__body(double 0x400921FB54442D18, %Qubit* null)
   call void @__quantum__qis__mz__body(%Qubit* null, %Result* nonnull inttoptr (i64 2 to %Result*))
   call void @__quantum__qis__reset__body(%Qubit* null)
@@ -92,17 +92,18 @@ continue__10:                                     ; preds = %then0__9, %continue
   %17 = select i1 %15, i64 1, i64 0
   %sum.4 = add nuw nsw i64 %sum.3, %17
   %substraction.4 = select i1 %15, i64 %16, i64 %substraction.3
+  call void @__quantum__qis__reset__body(%Qubit* null)
   %negativeMultiplication = mul i64 %substraction.4, 3
   %doubleNegativeMultiplication = mul i64 %substraction.4, -3
-  %__rtrnVal0__ = icmp eq i64 %sum.4, 5
-  %__rtrnVal1__ = icmp eq i64 %substraction.4, -10
-  %__rtrnVal2__ = icmp eq i64 %sum.4, 5
-  %__rtrnVal3__ = icmp eq i64 %negativeMultiplication, -30
-  %__rtrnVal4__ = icmp eq i64 %doubleNegativeMultiplication, 30
-  %doubleNegativeMultiplication.off = add i64 %doubleNegativeMultiplication, -30
+  %__rtrnVal0__ = icmp eq i64 %sum.4, 3
+  %__rtrnVal1__ = icmp eq i64 %substraction.4, -6
+  %__rtrnVal2__ = icmp eq i64 %sum.4, 3
+  %__rtrnVal3__ = icmp eq i64 %negativeMultiplication, -18
+  %__rtrnVal4__ = icmp eq i64 %doubleNegativeMultiplication, 18
+  %doubleNegativeMultiplication.off = add i64 %doubleNegativeMultiplication, -18
   %18 = icmp ult i64 %doubleNegativeMultiplication.off, 6
-  %19 = and i64 %sum.4, 30
-  %20 = icmp eq i64 %19, 4
+  %doubleNegativeMultiplication.off1 = add i64 %doubleNegativeMultiplication, -15
+  %19 = icmp ult i64 %doubleNegativeMultiplication.off1, 5
   call void @__quantum__rt__tuple_start_record_output()
   call void @__quantum__rt__bool_record_output(i1 %__rtrnVal0__, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @0, i64 0, i64 0))
   call void @__quantum__rt__bool_record_output(i1 %__rtrnVal1__, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @1, i64 0, i64 0))
@@ -110,7 +111,7 @@ continue__10:                                     ; preds = %then0__9, %continue
   call void @__quantum__rt__bool_record_output(i1 %__rtrnVal3__, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @3, i64 0, i64 0))
   call void @__quantum__rt__bool_record_output(i1 %__rtrnVal4__, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @4, i64 0, i64 0))
   call void @__quantum__rt__bool_record_output(i1 %18, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @5, i64 0, i64 0))
-  call void @__quantum__rt__bool_record_output(i1 %20, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @6, i64 0, i64 0))
+  call void @__quantum__rt__bool_record_output(i1 %19, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @6, i64 0, i64 0))
   call void @__quantum__rt__tuple_end_record_output()
   ret void
 }
